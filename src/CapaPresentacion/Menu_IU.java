@@ -52,6 +52,7 @@ public class Menu_IU extends javax.swing.JFrame {
         menu_item_TipoUsuario = new javax.swing.JMenuItem();
         menu_item_usuario = new javax.swing.JMenuItem();
         menu_item_turno = new javax.swing.JMenuItem();
+        menu_item_marca = new javax.swing.JMenuItem();
         menu_compras = new javax.swing.JMenu();
         menu_inventario = new javax.swing.JMenu();
         menu_ventas = new javax.swing.JMenu();
@@ -173,6 +174,14 @@ public class Menu_IU extends javax.swing.JFrame {
         });
         menu_mantenimiento.add(menu_item_turno);
 
+        menu_item_marca.setText("Marca");
+        menu_item_marca.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menu_item_marcaActionPerformed(evt);
+            }
+        });
+        menu_mantenimiento.add(menu_item_marca);
+
         jMenuBar1.add(menu_mantenimiento);
 
         menu_compras.setText("COMPRAS");
@@ -255,6 +264,18 @@ public class Menu_IU extends javax.swing.JFrame {
         frame.show();
     }//GEN-LAST:event_menu_item_usuarioActionPerformed
 
+    private void menu_item_marcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_item_marcaActionPerformed
+        // TODO add your handling code here:
+          Marca_IU frame = new Marca_IU();
+
+        escritorio.add(frame);
+        Dimension desktopSize = escritorio.getSize();
+        Dimension FrameSize = frame.getSize();
+        frame.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
+
+        frame.show();
+    }//GEN-LAST:event_menu_item_marcaActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -315,6 +336,7 @@ public class Menu_IU extends javax.swing.JFrame {
     private javax.swing.JMenu menu_compras;
     private javax.swing.JMenu menu_inventario;
     private javax.swing.JMenuItem menu_item_TipoUsuario;
+    private javax.swing.JMenuItem menu_item_marca;
     private javax.swing.JMenuItem menu_item_turno;
     private javax.swing.JMenuItem menu_item_usuario;
     private javax.swing.JMenu menu_mantenimiento;
