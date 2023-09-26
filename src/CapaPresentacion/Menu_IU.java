@@ -17,6 +17,10 @@ public class Menu_IU extends javax.swing.JFrame {
      */
     public Menu_IU() {
         initComponents();
+        
+        this.setExtendedState(this.MAXIMIZED_BOTH);
+        
+        
     }
 
     /**
@@ -53,6 +57,10 @@ public class Menu_IU extends javax.swing.JFrame {
         menu_item_usuario = new javax.swing.JMenuItem();
         menu_item_turno = new javax.swing.JMenuItem();
         menu_item_marca = new javax.swing.JMenuItem();
+        menu_item_categoria = new javax.swing.JMenuItem();
+        menu_item_medida = new javax.swing.JMenuItem();
+        menu_item_producto = new javax.swing.JMenuItem();
+        menu_item_composicion = new javax.swing.JMenuItem();
         menu_compras = new javax.swing.JMenu();
         menu_inventario = new javax.swing.JMenu();
         menu_ventas = new javax.swing.JMenu();
@@ -182,6 +190,38 @@ public class Menu_IU extends javax.swing.JFrame {
         });
         menu_mantenimiento.add(menu_item_marca);
 
+        menu_item_categoria.setText("Categoria");
+        menu_item_categoria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menu_item_categoriaActionPerformed(evt);
+            }
+        });
+        menu_mantenimiento.add(menu_item_categoria);
+
+        menu_item_medida.setText("Medida");
+        menu_item_medida.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menu_item_medidaActionPerformed(evt);
+            }
+        });
+        menu_mantenimiento.add(menu_item_medida);
+
+        menu_item_producto.setText("Producto");
+        menu_item_producto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menu_item_productoActionPerformed(evt);
+            }
+        });
+        menu_mantenimiento.add(menu_item_producto);
+
+        menu_item_composicion.setText("Composicion");
+        menu_item_composicion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menu_item_composicionActionPerformed(evt);
+            }
+        });
+        menu_mantenimiento.add(menu_item_composicion);
+
         jMenuBar1.add(menu_mantenimiento);
 
         menu_compras.setText("COMPRAS");
@@ -237,7 +277,7 @@ public class Menu_IU extends javax.swing.JFrame {
 
     private void btnProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProductosActionPerformed
         // TODO add your handling code here:
-      
+
     }//GEN-LAST:event_btnProductosActionPerformed
 
     private void menu_item_turnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_item_turnoActionPerformed
@@ -266,7 +306,7 @@ public class Menu_IU extends javax.swing.JFrame {
 
     private void menu_item_marcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_item_marcaActionPerformed
         // TODO add your handling code here:
-          Marca_IU frame = new Marca_IU();
+        Marca_IU frame = new Marca_IU();
 
         escritorio.add(frame);
         Dimension desktopSize = escritorio.getSize();
@@ -275,6 +315,63 @@ public class Menu_IU extends javax.swing.JFrame {
 
         frame.show();
     }//GEN-LAST:event_menu_item_marcaActionPerformed
+
+    private void menu_item_categoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_item_categoriaActionPerformed
+        // TODO add your handling code here:
+
+        Categoria_IU frame = new Categoria_IU();
+
+        escritorio.add(frame);
+        Dimension desktopSize = escritorio.getSize();
+        Dimension FrameSize = frame.getSize();
+        frame.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
+
+        frame.show();
+
+
+    }//GEN-LAST:event_menu_item_categoriaActionPerformed
+
+    private void menu_item_medidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_item_medidaActionPerformed
+        // TODO add your handling code here:
+
+        Medida_IU frame = new Medida_IU();
+
+        escritorio.add(frame);
+        Dimension desktopSize = escritorio.getSize();
+        Dimension FrameSize = frame.getSize();
+        frame.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
+
+        frame.show();
+    }//GEN-LAST:event_menu_item_medidaActionPerformed
+
+    private void menu_item_productoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_item_productoActionPerformed
+        // TODO add your handling code here:
+        Producto_IU frame = new Producto_IU();
+
+        escritorio.add(frame);
+        Dimension desktopSize = escritorio.getSize();
+        Dimension FrameSize = frame.getSize();
+        frame.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
+
+        frame.show();
+
+
+    }//GEN-LAST:event_menu_item_productoActionPerformed
+
+    private void menu_item_composicionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_item_composicionActionPerformed
+        // TODO add your handling code here:
+
+        Composicion_IU frame = new Composicion_IU();
+
+        escritorio.add(frame);
+        Dimension desktopSize = escritorio.getSize();
+        Dimension FrameSize = frame.getSize();
+        frame.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
+
+        frame.show();
+
+
+    }//GEN-LAST:event_menu_item_composicionActionPerformed
 
     /**
      * @param args the command line arguments
@@ -336,7 +433,11 @@ public class Menu_IU extends javax.swing.JFrame {
     private javax.swing.JMenu menu_compras;
     private javax.swing.JMenu menu_inventario;
     private javax.swing.JMenuItem menu_item_TipoUsuario;
+    private javax.swing.JMenuItem menu_item_categoria;
+    private javax.swing.JMenuItem menu_item_composicion;
     private javax.swing.JMenuItem menu_item_marca;
+    private javax.swing.JMenuItem menu_item_medida;
+    private javax.swing.JMenuItem menu_item_producto;
     private javax.swing.JMenuItem menu_item_turno;
     private javax.swing.JMenuItem menu_item_usuario;
     private javax.swing.JMenu menu_mantenimiento;

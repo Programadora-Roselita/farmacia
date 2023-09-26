@@ -108,6 +108,9 @@ public class TipoUsuario_IU extends javax.swing.JInternalFrame {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 txtNombreKeyPressed(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtNombreKeyTyped(evt);
+            }
         });
 
         jLabel1.setText("CODIGO");
@@ -251,7 +254,7 @@ public class TipoUsuario_IU extends javax.swing.JInternalFrame {
                     .addComponent(btnEliminar)
                     .addComponent(btnLimpiar)
                     .addComponent(btnCerrar))
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -418,6 +421,17 @@ public class TipoUsuario_IU extends javax.swing.JInternalFrame {
         dispose();
 
     }//GEN-LAST:event_btnCerrarActionPerformed
+
+    private void txtNombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreKeyTyped
+        // TODO add your handling code here:
+          char type = evt.getKeyChar();
+
+        if (!Character.isLetter(type) && type != KeyEvent.VK_SPACE) {
+            getToolkit().beep();
+            evt.consume();
+
+        }
+    }//GEN-LAST:event_txtNombreKeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
