@@ -6,9 +6,12 @@ package CapaNegocio;
 
 import CapaConexion.Conexion;
 import CapaDatos.Turno;
+import CapaDatos.Usuario;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -92,4 +95,38 @@ public class TurnoBD {
         return rpta;
 
     }
+
+    public List<Turno> buscarTurno(String inicio, String fin, String uDni) {
+
+        List<Turno> lista = new ArrayList<>();
+        sql = "SELECT idturno,descripcion,inicio,fin,uDni FROM turno WHERE (inicio<? AND fin>?) AND uDni=?";
+
+        try {
+            PreparedStatement pst = cn.prepareStatement(sql);
+            pst.setString(1, inicio);
+            pst.setString(2, fin);
+            pst.setString(3, uDni);
+
+            ResultSet rs = pst.executeQuery();
+            if (rs.next()) {
+                Turno oTurno = new Turno();
+
+                oTurno.setIdturno(rs.getInt(1));
+                oTurno.setDescripcion(rs.getString(2));
+                oTurno.setInicio(rs.getString(3));
+                oTurno.setFin(rs.getString(4));
+                oTurno.setuDni(rs.getString(5));
+
+                lista.add(oTurno);
+
+            }
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e, "Error al  buscar  turno...", JOptionPane.ERROR_MESSAGE);
+            return null;
+        }
+        
+        return lista;
+    }
+    
 }

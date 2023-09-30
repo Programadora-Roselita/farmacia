@@ -425,13 +425,7 @@ public class Composicion_IU extends javax.swing.JInternalFrame {
     private void txtComposicionKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtComposicionKeyTyped
         // TODO add your handling code here:
 
-        char type = evt.getKeyChar();
-
-        if (!Character.isLetter(type) && type != KeyEvent.VK_SPACE) {
-            getToolkit().beep();
-            evt.consume();
-
-        }
+       
 
 
     }//GEN-LAST:event_txtComposicionKeyTyped

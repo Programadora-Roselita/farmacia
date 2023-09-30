@@ -33,7 +33,7 @@ public class ProductoBD {
         sql = "SELECT pSerie,pDescripcion,pObservacion,digemi,pCondicion,catNombre,maNombre,mPresentacion,c.idcategoria,m.idmarca,me.idmedida FROM producto AS p "
                 + "INNER JOIN marca AS m ON p.idmarca=m.idmarca "
                 + "INNER JOIN medida AS me ON p.idmedida=me.idmedida "
-                + "INNER JOIN categoria AS c ON p.idcategoria=c.idcategoria LIMIT 0, 20 ";
+                + "INNER JOIN categoria AS c ON p.idcategoria=c.idcategoria LIMIT 0, 100 ";
 
         try {
             PreparedStatement pst = cn.prepareStatement(sql);
@@ -182,6 +182,48 @@ public class ProductoBD {
 
     }
 
+    public DefaultTableModel buscarProductoDescripcion(String descripcion) {
 
+        DefaultTableModel tabla_temporal;
+        String[] titulos = {"SERIE", "DESCRIPCION", "OBSERVACION", "DIGEMI", "CONDICION", "CATEGORIA", "MARCA", "PRESENTACION", "ID_CAT", "ID_MA", "ID_ME"};
+        String[] registros = new String[11];
+        tabla_temporal = new DefaultTableModel(null, titulos);
+
+        sql = "SELECT pSerie,pDescripcion,pObservacion,digemi,pCondicion,catNombre,maNombre,mPresentacion,c.idcategoria,m.idmarca,me.idmedida FROM producto AS p "
+                + "INNER JOIN marca AS m ON p.idmarca=m.idmarca "
+                + "INNER JOIN medida AS me ON p.idmedida=me.idmedida "
+                + "INNER JOIN categoria AS c ON p.idcategoria=c.idcategoria "
+                + "WHERE pDescripcion LIKE ? LIMIT 0,100";
+
+        try {
+            PreparedStatement pst = cn.prepareStatement(sql);
+            pst.setString(1, "%" + descripcion + "%");
+
+            ResultSet rs = pst.executeQuery();
+            while (rs.next()) {
+                registros[0] = rs.getString("pSerie");
+                registros[1] = rs.getString("pDescripcion");
+                registros[2] = rs.getString("pObservacion");
+                registros[3] = rs.getString("digemi");
+                registros[4] = rs.getString("pCondicion");
+                registros[5] = rs.getString("catNombre");
+                registros[6] = rs.getString("maNombre");
+                registros[7] = rs.getString("mPresentacion");
+                registros[8] = rs.getString("idcategoria");
+                registros[9] = rs.getString("idmarca");
+                registros[10] = rs.getString("idmedida");
+
+                tabla_temporal.addRow(registros);
+
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, e, "Error al buscar Producto BD......", JOptionPane.ERROR_MESSAGE);
+
+            return null;
+
+        }
+        return tabla_temporal;
+
+    }
 
 }

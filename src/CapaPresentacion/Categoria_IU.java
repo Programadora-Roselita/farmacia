@@ -27,7 +27,7 @@ public class Categoria_IU extends javax.swing.JInternalFrame {
     public Categoria_IU() {
         initComponents();
         reporte_categoria();
-    
+
     }
 
     private void reporte_categoria() {
@@ -46,6 +46,11 @@ public class Categoria_IU extends javax.swing.JInternalFrame {
                 String catNombre = lista_categorias.get(i).getCatNombre();
                 Object[] data = {idcategoria, catNombre};
                 tabla_temporal.addRow(data);
+                
+                //coloque la cantidad en categoria:
+
+                int cant = tabla_temporal.getRowCount();
+                txtCantidad.setText("" + cant);
 
             }
             tabla_reporte_categorias.setModel(tabla_temporal);

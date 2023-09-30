@@ -19,7 +19,19 @@ public class Menu_IU extends javax.swing.JFrame {
         initComponents();
         
         this.setExtendedState(this.MAXIMIZED_BOTH);
+        menu_mantenimiento.setEnabled(false);
+        menu_compras.setEnabled(false);
+        menu_inventario.setEnabled(false);
+        menu_ventas.setEnabled(false);
         
+        btnProductos.setEnabled(false);
+        btnCompras.setEnabled(false);
+        btnCerrar.setEnabled(false);
+        btnVentas.setEnabled(false);
+        btnCaja.setEnabled(false);
+        menu_caja.setEnabled(false);
+        btnIngresos.setEnabled(false);
+        btnEgresos.setEnabled(false);
         
     }
 
@@ -76,17 +88,6 @@ public class Menu_IU extends javax.swing.JFrame {
         setExtendedState(20);
 
         escritorio.setBackground(new java.awt.Color(0, 0, 0));
-
-        javax.swing.GroupLayout escritorioLayout = new javax.swing.GroupLayout(escritorio);
-        escritorio.setLayout(escritorioLayout);
-        escritorioLayout.setHorizontalGroup(
-            escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        escritorioLayout.setVerticalGroup(
-            escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 678, Short.MAX_VALUE)
-        );
 
         jToolBar1.setBackground(new java.awt.Color(204, 255, 204));
         jToolBar1.setForeground(new java.awt.Color(204, 255, 204));
@@ -155,6 +156,21 @@ public class Menu_IU extends javax.swing.JFrame {
         btnCerrar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnCerrar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(btnCerrar);
+
+        escritorio.setLayer(jToolBar1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        javax.swing.GroupLayout escritorioLayout = new javax.swing.GroupLayout(escritorio);
+        escritorio.setLayout(escritorioLayout);
+        escritorioLayout.setHorizontalGroup(
+            escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jToolBar1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1097, Short.MAX_VALUE)
+        );
+        escritorioLayout.setVerticalGroup(
+            escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(escritorioLayout.createSequentialGroup()
+                .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 684, Short.MAX_VALUE))
+        );
 
         menu_mantenimiento.setText("MANTENIMIENTO");
 
@@ -243,14 +259,10 @@ public class Menu_IU extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(escritorio)
-            .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, 1097, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(escritorio))
+            .addComponent(escritorio, javax.swing.GroupLayout.Alignment.TRAILING)
         );
 
         pack();
@@ -264,14 +276,14 @@ public class Menu_IU extends javax.swing.JFrame {
         // TODO add your handling code here:
 
         TipoUsuario_IU frame = new TipoUsuario_IU();
-
+        
         escritorio.add(frame);
         Dimension desktopSize = escritorio.getSize();
         Dimension FrameSize = frame.getSize();
         frame.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
-
+        
         frame.show();
-
+        
 
     }//GEN-LAST:event_menu_item_TipoUsuarioActionPerformed
 
@@ -283,36 +295,36 @@ public class Menu_IU extends javax.swing.JFrame {
     private void menu_item_turnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_item_turnoActionPerformed
         // TODO add your handling code here:
         Turno_IU frame = new Turno_IU();
-
+        
         escritorio.add(frame);
         Dimension desktopSize = escritorio.getSize();
         Dimension FrameSize = frame.getSize();
         frame.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
-
+        
         frame.show();
     }//GEN-LAST:event_menu_item_turnoActionPerformed
 
     private void menu_item_usuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_item_usuarioActionPerformed
         // TODO add your handling code here:
         Usuario_IU frame = new Usuario_IU();
-
+        
         escritorio.add(frame);
         Dimension desktopSize = escritorio.getSize();
         Dimension FrameSize = frame.getSize();
         frame.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
-
+        
         frame.show();
     }//GEN-LAST:event_menu_item_usuarioActionPerformed
 
     private void menu_item_marcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_item_marcaActionPerformed
         // TODO add your handling code here:
         Marca_IU frame = new Marca_IU();
-
+        
         escritorio.add(frame);
         Dimension desktopSize = escritorio.getSize();
         Dimension FrameSize = frame.getSize();
         frame.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
-
+        
         frame.show();
     }//GEN-LAST:event_menu_item_marcaActionPerformed
 
@@ -320,14 +332,14 @@ public class Menu_IU extends javax.swing.JFrame {
         // TODO add your handling code here:
 
         Categoria_IU frame = new Categoria_IU();
-
+        
         escritorio.add(frame);
         Dimension desktopSize = escritorio.getSize();
         Dimension FrameSize = frame.getSize();
         frame.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
-
+        
         frame.show();
-
+        
 
     }//GEN-LAST:event_menu_item_categoriaActionPerformed
 
@@ -335,26 +347,26 @@ public class Menu_IU extends javax.swing.JFrame {
         // TODO add your handling code here:
 
         Medida_IU frame = new Medida_IU();
-
+        
         escritorio.add(frame);
         Dimension desktopSize = escritorio.getSize();
         Dimension FrameSize = frame.getSize();
         frame.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
-
+        
         frame.show();
     }//GEN-LAST:event_menu_item_medidaActionPerformed
 
     private void menu_item_productoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_item_productoActionPerformed
         // TODO add your handling code here:
         Producto_IU frame = new Producto_IU();
-
+        
         escritorio.add(frame);
         Dimension desktopSize = escritorio.getSize();
         Dimension FrameSize = frame.getSize();
         frame.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
-
+        
         frame.show();
-
+        
 
     }//GEN-LAST:event_menu_item_productoActionPerformed
 
@@ -362,14 +374,14 @@ public class Menu_IU extends javax.swing.JFrame {
         // TODO add your handling code here:
 
         Composicion_IU frame = new Composicion_IU();
-
+        
         escritorio.add(frame);
         Dimension desktopSize = escritorio.getSize();
         Dimension FrameSize = frame.getSize();
         frame.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
-
+        
         frame.show();
-
+        
 
     }//GEN-LAST:event_menu_item_composicionActionPerformed
 
@@ -384,7 +396,7 @@ public class Menu_IU extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Windows".equals(info.getName())) {
+                if ("Window".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -409,14 +421,14 @@ public class Menu_IU extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnCaja;
-    private javax.swing.JButton btnCerrar;
-    private javax.swing.JButton btnCompras;
-    private javax.swing.JButton btnEgresos;
-    private javax.swing.JButton btnIngresos;
-    private javax.swing.JButton btnProductos;
-    private javax.swing.JButton btnVentas;
-    public javax.swing.JDesktopPane escritorio;
+    public javax.swing.JButton btnCaja;
+    public javax.swing.JButton btnCerrar;
+    public javax.swing.JButton btnCompras;
+    public javax.swing.JButton btnEgresos;
+    public javax.swing.JButton btnIngresos;
+    public javax.swing.JButton btnProductos;
+    public javax.swing.JButton btnVentas;
+    public static javax.swing.JDesktopPane escritorio;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
@@ -429,9 +441,9 @@ public class Menu_IU extends javax.swing.JFrame {
     private javax.swing.JToolBar.Separator jSeparator6;
     private javax.swing.JToolBar.Separator jSeparator7;
     private javax.swing.JToolBar jToolBar1;
-    private javax.swing.JMenu menu_caja;
-    private javax.swing.JMenu menu_compras;
-    private javax.swing.JMenu menu_inventario;
+    public javax.swing.JMenu menu_caja;
+    public javax.swing.JMenu menu_compras;
+    public javax.swing.JMenu menu_inventario;
     private javax.swing.JMenuItem menu_item_TipoUsuario;
     private javax.swing.JMenuItem menu_item_categoria;
     private javax.swing.JMenuItem menu_item_composicion;
@@ -440,7 +452,7 @@ public class Menu_IU extends javax.swing.JFrame {
     private javax.swing.JMenuItem menu_item_producto;
     private javax.swing.JMenuItem menu_item_turno;
     private javax.swing.JMenuItem menu_item_usuario;
-    private javax.swing.JMenu menu_mantenimiento;
-    private javax.swing.JMenu menu_ventas;
+    public javax.swing.JMenu menu_mantenimiento;
+    public javax.swing.JMenu menu_ventas;
     // End of variables declaration//GEN-END:variables
 }

@@ -506,6 +506,12 @@ public class Producto_IU extends javax.swing.JInternalFrame {
 
         jLabel9.setText("PRODUCTO");
 
+        txtProducto.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtProductoKeyPressed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -611,7 +617,7 @@ public class Producto_IU extends javax.swing.JInternalFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -649,10 +655,12 @@ public class Producto_IU extends javax.swing.JInternalFrame {
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnComposicion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap())
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(txtCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel10))
-                    .addComponent(btnComposicion)))
+                        .addComponent(jLabel10))))
         );
 
         pack();
@@ -992,81 +1000,75 @@ public class Producto_IU extends javax.swing.JInternalFrame {
 
     private void txtSerieKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSerieKeyPressed
         // TODO add your handling code here:
-          if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             txtDescripcion.requestFocus();
         }
     }//GEN-LAST:event_txtSerieKeyPressed
 
     private void txtDescripcionKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDescripcionKeyPressed
         // TODO add your handling code here:
-          if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             txtObservacion.requestFocus();
         }
     }//GEN-LAST:event_txtDescripcionKeyPressed
 
     private void txtObservacionKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtObservacionKeyPressed
         // TODO add your handling code here:
-          if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             txtDigemi.requestFocus();
         }
     }//GEN-LAST:event_txtObservacionKeyPressed
 
     private void txtDigemiKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDigemiKeyPressed
         // TODO add your handling code here:
-          if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             btnNuevo.requestFocus();
         }
     }//GEN-LAST:event_txtDigemiKeyPressed
 
     private void btnNuevoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnNuevoKeyPressed
         // TODO add your handling code here:
-          if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             btnRegistrar.requestFocus();
         }
     }//GEN-LAST:event_btnNuevoKeyPressed
 
     private void btnBuscarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnBuscarKeyPressed
         // TODO add your handling code here:
-          if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             btnModificar.requestFocus();
         }
     }//GEN-LAST:event_btnBuscarKeyPressed
 
     private void btnRegistrarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnRegistrarKeyPressed
         // TODO add your handling code here:
-          if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             btnBuscar.requestFocus();
         }
     }//GEN-LAST:event_btnRegistrarKeyPressed
 
     private void btnModificarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnModificarKeyPressed
         // TODO add your handling code here:
-          if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             btnEliminar.requestFocus();
         }
     }//GEN-LAST:event_btnModificarKeyPressed
 
     private void btnEliminarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnEliminarKeyPressed
         // TODO add your handling code here:
-          if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             btnCerrar.requestFocus();
         }
     }//GEN-LAST:event_btnEliminarKeyPressed
 
     private void txtDescripcionKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDescripcionKeyTyped
         // TODO add your handling code here:
-          char type = evt.getKeyChar();
 
-        if (!Character.isLetter(type) && type != KeyEvent.VK_SPACE) {
-            getToolkit().beep();
-            evt.consume();
-
-        }
     }//GEN-LAST:event_txtDescripcionKeyTyped
 
     private void txtObservacionKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtObservacionKeyTyped
         // TODO add your handling code here:
-          char type = evt.getKeyChar();
+        char type = evt.getKeyChar();
 
         if (!Character.isLetter(type) && type != KeyEvent.VK_SPACE) {
             getToolkit().beep();
@@ -1077,7 +1079,7 @@ public class Producto_IU extends javax.swing.JInternalFrame {
 
     private void txtDigemiKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDigemiKeyTyped
         // TODO add your handling code here:
-          char type = evt.getKeyChar();
+        char type = evt.getKeyChar();
 
         if (!Character.isLetter(type) && type != KeyEvent.VK_SPACE) {
             getToolkit().beep();
@@ -1088,8 +1090,8 @@ public class Producto_IU extends javax.swing.JInternalFrame {
 
     private void txtSerieKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSerieKeyTyped
         // TODO add your handling code here:
-        
-         char c = evt.getKeyChar();
+
+        char c = evt.getKeyChar();
         if (!Character.isDigit(c) || txtSerie.getText().length() >= 13) {
 
             evt.consume();
@@ -1099,17 +1101,58 @@ public class Producto_IU extends javax.swing.JInternalFrame {
 
     private void btnNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoActionPerformed
         // TODO add your handling code here:
+        
         habilitar();
+        limpiar();
+        txtSerie.requestFocus();
     }//GEN-LAST:event_btnNuevoActionPerformed
 
     private void btnComposicionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComposicionActionPerformed
         // TODO add your handling code here:
-       
-        
-                            
-        
-   
+
+        Composicion_IU frame = new Composicion_IU();
+        Menu_IU.escritorio.add(frame);
+        Dimension desktopSize = Menu_IU.escritorio.getSize();
+        Dimension FrameSize = frame.getSize();
+        frame.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
+        frame.show();
+
     }//GEN-LAST:event_btnComposicionActionPerformed
+
+    private void txtProductoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtProductoKeyPressed
+        // TODO add your handling code here:
+
+        limpiar_tabla_formulario();
+
+        String descripcion = txtProducto.getText();
+        DefaultTableModel tabla_temporal;
+        DefaultTableModel tabla_temporal_producto = (DefaultTableModel) tabla_reporte_producto.getModel();
+
+        ProductoBD oProductoBD = new ProductoBD();
+        tabla_temporal = oProductoBD.buscarProductoDescripcion(descripcion);
+        int cant = tabla_temporal.getRowCount();
+
+        for (int i = 0; i < cant; i++) {
+
+            String serie = tabla_temporal.getValueAt(i, 0).toString();
+            descripcion = tabla_temporal.getValueAt(i, 1).toString();
+            String obsevacion = tabla_temporal.getValueAt(i, 2).toString();
+            String digemi = tabla_temporal.getValueAt(i, 3).toString();
+            String condicion = tabla_temporal.getValueAt(i, 4).toString();
+            String categoria = tabla_temporal.getValueAt(i, 5).toString();
+            String marca = tabla_temporal.getValueAt(i, 6).toString();
+            String medida = tabla_temporal.getValueAt(i, 7).toString();
+
+            Object[] data = {serie, descripcion, obsevacion, digemi, condicion, categoria, marca, medida};
+            tabla_temporal_producto.addRow(data);
+
+        }
+
+        tabla_reporte_producto.setModel(tabla_temporal_producto);
+        txtCantidad.setText(" " + cant);
+
+
+    }//GEN-LAST:event_txtProductoKeyPressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
