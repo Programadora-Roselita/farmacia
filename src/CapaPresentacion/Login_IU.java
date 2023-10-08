@@ -353,7 +353,7 @@ public class Login_IU extends javax.swing.JFrame {
     private void txtClaveKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtClaveKeyPressed
         // TODO add your handling code here:
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-            btnIngresar.requestFocus();
+            btnIngresar.doClick();
         }
 
     }//GEN-LAST:event_txtClaveKeyPressed
