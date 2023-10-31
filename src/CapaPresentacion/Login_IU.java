@@ -252,7 +252,7 @@ public class Login_IU extends javax.swing.JFrame {
 
                             oMenu.menu_mantenimiento.setEnabled(true);
                             oMenu.menu_compras.setEnabled(true);
-                            oMenu.menu_inventario.setEnabled(true);
+                            oMenu.menu_item_modificar_precios_productos.setEnabled(true);
                             oMenu.btnProductos.setEnabled(true);
                             oMenu.btnCompras.setEnabled(true);
                             oMenu.btnCerrar.setEnabled(true);

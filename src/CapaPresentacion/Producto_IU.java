@@ -9,7 +9,9 @@ import CapaDatos.Composicion;
 import CapaDatos.Marca;
 import CapaDatos.Medida;
 import CapaDatos.Producto;
+import CapaNegocio.AjustarColumnasJTable;
 import CapaNegocio.CategoriaBD;
+import CapaNegocio.ColorearColumnasJTable;
 import CapaNegocio.MarcaBD;
 import CapaNegocio.MedidaBD;
 import CapaNegocio.ProductoBD;
@@ -44,6 +46,14 @@ public class Producto_IU extends javax.swing.JInternalFrame {
         cargarMedida();
 
         reportar();
+
+        ColorearColumnasJTable col5 = new ColorearColumnasJTable(5, Color.yellow);
+
+        ColorearColumnasJTable col7 = new ColorearColumnasJTable(7, Color.pink);
+
+        tabla_reporte_producto.getColumnModel().getColumn(5).setCellRenderer(col5);
+        tabla_reporte_producto.getColumnModel().getColumn(7).setCellRenderer(col7);
+
     }
 
     private void reportar() {
@@ -77,6 +87,9 @@ public class Producto_IU extends javax.swing.JInternalFrame {
                 tabla_temporal_producto.addRow(data);
             }
             tabla_reporte_producto.setModel(tabla_temporal_producto);
+
+            AjustarColumnasJTable.ajustarAnchoColumnas(tabla_reporte_producto);
+
             setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         } catch (Exception ex) {
@@ -1101,7 +1114,7 @@ public class Producto_IU extends javax.swing.JInternalFrame {
 
     private void btnNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoActionPerformed
         // TODO add your handling code here:
-        
+
         habilitar();
         limpiar();
         txtSerie.requestFocus();

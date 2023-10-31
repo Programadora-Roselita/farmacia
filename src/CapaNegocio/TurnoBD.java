@@ -125,8 +125,42 @@ public class TurnoBD {
             JOptionPane.showMessageDialog(null, e, "Error al  buscar  turno...", JOptionPane.ERROR_MESSAGE);
             return null;
         }
-        
+
         return lista;
     }
-    
+
+    public List<Turno> verificarHorario(String fin, String uDni) {
+
+        List<Turno> lista = new ArrayList<>();
+        sql = "SELECT idturno,descripcion,inicio,fin,uDni FROM turno WHERE fin>? AND uDni=?";
+
+        try {
+            cn = mysql.conectar();
+            PreparedStatement pst = cn.prepareStatement(sql);
+            pst.setString(1, fin);
+            pst.setString(2, uDni);
+
+            ResultSet rs = pst.executeQuery();
+            while (rs.next()) {
+                Turno oTurno = new Turno();
+
+                oTurno.setIdturno(rs.getInt(1));
+                oTurno.setDescripcion(rs.getString(2));
+                oTurno.setInicio(rs.getString(3));
+                oTurno.setFin(rs.getString(4));
+                oTurno.setuDni(rs.getString(5));
+
+                lista.add(oTurno);
+
+            }
+            pst.close();
+            cn.close();
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e, "Error al buscar turno", JOptionPane.ERROR_MESSAGE);
+            return null;
+        }
+        return lista;
+    }
+
 }

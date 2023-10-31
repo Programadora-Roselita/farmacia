@@ -6,6 +6,7 @@ package CapaPresentacion;
 
 import CapaDatos.Categoria;
 import CapaDatos.TipoUsuario;
+import CapaNegocio.AjustarColumnasJTable;
 import CapaNegocio.CategoriaBD;
 import CapaNegocio.MarcaBD;
 import CapaNegocio.TipoUsuarioBD;
@@ -54,6 +55,9 @@ public class Categoria_IU extends javax.swing.JInternalFrame {
 
             }
             tabla_reporte_categorias.setModel(tabla_temporal);
+            
+            AjustarColumnasJTable.ajustarAnchoColumnas(tabla_reporte_categorias);
+            
             setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         } catch (Exception e) {
